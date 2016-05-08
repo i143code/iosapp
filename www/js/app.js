@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','starter.controllers','ngCordova', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -49,6 +49,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
+
+.state('tab.photo', {
+    url: '/photo',
+    views: {
+      'tab-photo': {
+        templateUrl: 'templates/tab-photo.html',
+        controller: 'PhotoCtrl'
+      }
+    }
+  })
+
+  .state('tab.photo-detail', {
+    url: '/photo/detail',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/photo-detail.html',
+        controller: 'PhotoDetailCtrl'
+      }
+    }
+  })
+
 
   .state('tab.chats', {
       url: '/chats',
